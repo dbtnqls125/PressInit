@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myLabel: UILabel!
+    var colorState = true
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        myLabel.text = ""
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +25,23 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func btnPress(_ sender: Any) {
+        myLabel.text = "Pressed!!"
+    }
+    
+    
+    @IBAction func btnInit(_ sender: Any) {
+        myLabel.text = ""
+    }
+    
+    @IBAction func changeColor(_ sender: Any) {
+        if colorState == true{
+        self.view.backgroundColor = UIColor.green
+        colorState = false
+        }else{
+           self.view.backgroundColor = UIColor.white
+            colorState = true
+        }
 }
 
+}
